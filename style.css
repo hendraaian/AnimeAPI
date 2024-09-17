@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --blackColor: #232321;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-family: "Montserrat", sans-serif;
+}
+
+.menu-top {
+    padding: 1em;
+    background-color: var(--blackColor);
+    text-align: center;
+    color: aliceblue;
+    font-weight: 500;
+    font-size: .8em;
+}
+
+header {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: aliceblue;
+    border-radius: 3px;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: 400;
+    color: var(--blackColor);
+    padding: 1.3em .5em;
+    border-bottom: 3px solid transparent;
+    transition: .2s;
+}
+
+nav a:nth-child(1) {
+    border-bottom: 3px solid var(--blackColor);
+    font-weight: 600;
+}
+
+nav a:hover {
+    font-weight: 600;
+    border-bottom: 3px solid var(--blackColor);
+}
+
+.nav-search input[type='text'] {
+    border: 0;
+    padding: .8em;
+    border-radius: 3px;
+    color: var(--blackColor);
+    outline: 0;
+}
+
+.nav-search button {
+    padding: .6em;
+    border: 0;
+    background-color: var(--blackColor);
+    color: aliceblue;
+    margin-left: 5px;
+    border-radius: 3px;
+    transition: .2s;
+}
+
+.nav-search button:hover {
+    opacity: .9;
+    cursor: pointer;
+}
+
+
+/* Akhir Header */
+
+section.section-anime {
+    max-width: 90%;
+    margin: 3em auto;
+    padding: .5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+}
+
+.anime-list {
+    border-top: 2px solid var(--blackColor);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+    height: auto;
+    justify-items: center;
+    align-items: center;
+}
+
+.anime-card {
+    margin: 1em 0;
+    max-width: 300px;
+    padding: 0 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px 0;
+    transition: .5s;
+    position: relative;
+    overflow: hidden;
+}
+
+.img-anime {
+    border-radius: 8px;
+    transition: .3s;
+    /* height: 100%; */
+    width: 250px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.anime-card:hover .img-anime {
+    cursor: pointer;
+    opacity: .9;
+}
+
+.anime-card:hover .card-desk {
+    z-index: 1;
+    display: inline-block;
+    bottom: 0px;
+}
+
+
+div.card-desk {
+    position: absolute;
+    background-color: aliceblue;
+    width: 90%;
+    /* transform: translateY(430px); */
+    bottom: -100px;
+    padding: 15px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    transition: .5s;
+    padding: 15px;
+
+}
+
+.card-desk p:nth-child(even) {
+    display: inline-block;
+}
+
+p:nth-child(even) span {
+    border-radius: 5px;
+    background-color: #ddd;
+    font-size: .8em;
+}
+
+.anime-card .on-going {
+    position: absolute;
+    top: 1em;
+    right: 15px;
+    background-color: #fdef2a;
+    color: var(--blackColor);
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-weight: 400;
+}
+
+.anime-card .card-icon {
+    height: 30px;
+    line-height: 30px;
+    width: 40px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position: absolute;
+    top: 1em;
+    left: 15px;
+    text-align: center;
+    background-color: aliceblue;
+    color: var(--blackColor);
+}
+
+.card-icon:hover {
+    opacity: .9;
+    cursor: pointer;
+}
+
+
+/* Responsive On Mobile */
+@media only screen and (max-width: 768px) {
+    .img-anime {
+        width: 200px;
+        height: 300px;
+    }
+
+    header {
+        display: none;
+    }
+}
